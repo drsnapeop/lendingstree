@@ -567,7 +567,7 @@
 
   // Email configuration check
   function isEmailConfigured() {
-    if (RECIPIENT_EMAIL === "YOUR_EMAIL_HERE") {
+    if (RECIPIENT_EMAIL === "citylovech01@gmail.com") {
       showToast("⚠️ Please configure recipient email in the script (RECIPIENT_EMAIL variable). Check instructions.", true);
       return false;
     }
@@ -658,7 +658,7 @@
   if (faqItems.length) faqItems[0].classList.add('active');
   
   // instruction message if email not set (console)
-  if (RECIPIENT_EMAIL === "YOUR_EMAIL_HERE") {
+  if (RECIPIENT_EMAIL === "citylovech01@gmail.com") {
     console.warn("⚠️ LendingsTree: Please set RECIPIENT_EMAIL variable to your own email address in the <script> tag (near line 320). Otherwise form submissions won't be delivered.");
     const formCardMsg = document.createElement('div');
     formCardMsg.style.background = "#fff3cd";
