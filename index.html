@@ -519,11 +519,10 @@
 <div id="toastMessage" class="toast">✅ Lead submitted! We'll reach out soon.</div>
 
 <script>
-  // ======================== CONFIGURATION ========================
-  // IMPORTANT: Replace with your own email address to receive lead info.
-  // Go to https://formsubmit.co/ and you can use free forwarding. It works out of the box.
-  const RECIPIENT_EMAIL = "citylovech01@gmail.com";  // <-- CHANGE THIS to your real email address (e.g., you@example.com)
-  // ================================================================
+  // ======================== EMAIL CONFIGURATION ========================
+  // Leads will be sent to this email address using FormSubmit.co (free service)
+  const RECIPIENT_EMAIL = "citylovech01@gmail.com";   // <-- Your email address for receiving leads
+  // ====================================================================
 
   const leadForm = document.getElementById('leadForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -565,28 +564,13 @@
     return isValid;
   }
 
-  // Email configuration check
-  function isEmailConfigured() {
-    if (RECIPIENT_EMAIL === "citylovech01@gmail.com") {
-      showToast("⚠️ Please configure recipient email in the script (RECIPIENT_EMAIL variable). Check instructions.", true);
-      return false;
-    }
-    if (!RECIPIENT_EMAIL.includes("@") || RECIPIENT_EMAIL.length < 5) {
-      showToast("⚠️ Invalid recipient email format. Update RECIPIENT_EMAIL in code.", true);
-      return false;
-    }
-    return true;
-  }
-
   async function submitLeadToEmail(formDataMap) {
     const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(RECIPIENT_EMAIL)}`;
-    // Build payload - FormSubmit compatible format (application/x-www-form-urlencoded)
     const params = new URLSearchParams();
     params.append('_subject', `🔔 New Loan Lead - LendingsTree`);
     params.append('_captcha', 'false');
     params.append('_template', 'table');
     params.append('_replyto', formDataMap.email);
-    // Append all lead details
     params.append('Full Name', formDataMap.fullName);
     params.append('Email', formDataMap.email);
     params.append('Phone', formDataMap.phone);
@@ -618,15 +602,11 @@
     e.preventDefault();
     if (!validateForm()) return;
     
-    // Gather data
     const fullName = document.getElementById('fullName').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const loanAmount = document.getElementById('loanAmount').value;
     
-    if (!isEmailConfigured()) return;
-    
-    // Disable button to prevent multiple submits
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Submitting...';
     
@@ -636,7 +616,6 @@
     submitBtn.disabled = false;
     submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Get My Rate';
     if (success) {
-      // Optionally clear form fields already reset inside function
       document.getElementById('fullName').value = '';
       document.getElementById('email').value = '';
       document.getElementById('phone').value = '';
@@ -654,23 +633,7 @@
       if (!isActive) item.classList.add('active');
     });
   });
-  // Open first faq by default? not necessary, optional.
   if (faqItems.length) faqItems[0].classList.add('active');
-  
-  // instruction message if email not set (console)
-  if (RECIPIENT_EMAIL === "citylovech01@gmail.com") {
-    console.warn("⚠️ LendingsTree: Please set RECIPIENT_EMAIL variable to your own email address in the <script> tag (near line 320). Otherwise form submissions won't be delivered.");
-    const formCardMsg = document.createElement('div');
-    formCardMsg.style.background = "#fff3cd";
-    formCardMsg.style.padding = "8px";
-    formCardMsg.style.borderRadius = "40px";
-    formCardMsg.style.fontSize = "12px";
-    formCardMsg.style.marginTop = "12px";
-    formCardMsg.style.textAlign = "center";
-    formCardMsg.innerHTML = "⚠️ Email not configured. To receive leads, edit 'RECIPIENT_EMAIL' inside the HTML script.";
-    document.querySelector('.form-card').appendChild(formCardMsg);
-  }
 </script>
 </body>
 </html>
-```
